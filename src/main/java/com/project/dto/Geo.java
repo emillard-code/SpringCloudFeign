@@ -1,4 +1,4 @@
-package dto;
+package com.project.dto;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,49 +11,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "name",
-        "catchPhrase",
-        "bs"
+        "lat",
+        "lng"
 })
-public class Company {
+public class Geo {
 
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("catchPhrase")
-    private String catchPhrase;
-    @JsonProperty("bs")
-    private String bs;
+    @JsonProperty("lat")
+    private String lat;
+    @JsonProperty("lng")
+    private String lng;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("lat")
+    public String getLat() {
+        return lat;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("lat")
+    public void setLat(String lat) {
+        this.lat = lat;
     }
 
-    @JsonProperty("catchPhrase")
-    public String getCatchPhrase() {
-        return catchPhrase;
+    @JsonProperty("lng")
+    public String getLng() {
+        return lng;
     }
 
-    @JsonProperty("catchPhrase")
-    public void setCatchPhrase(String catchPhrase) {
-        this.catchPhrase = catchPhrase;
-    }
-
-    @JsonProperty("bs")
-    public String getBs() {
-        return bs;
-    }
-
-    @JsonProperty("bs")
-    public void setBs(String bs) {
-        this.bs = bs;
+    @JsonProperty("lng")
+    public void setLng(String lng) {
+        this.lng = lng;
     }
 
     @JsonAnyGetter
