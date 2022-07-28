@@ -1,10 +1,5 @@
 package com.project.dto;
 
-import java.util.HashMap;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -29,8 +24,6 @@ public class Address {
     private String zipcode;
     @JsonProperty("geo")
     private Geo geo;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("street")
     public String getStreet() {
@@ -80,16 +73,6 @@ public class Address {
     @JsonProperty("geo")
     public void setGeo(Geo geo) {
         this.geo = geo;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }
